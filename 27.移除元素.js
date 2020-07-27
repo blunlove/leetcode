@@ -13,7 +13,11 @@
 var removeElement = function(nums, val) {
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] == val) {
-      nums.splice(i, 1);
+      // nums.splice(i, 1);
+      for (let j = i; j < nums.length - 1; j++) {
+        [nums[j], nums[j + 1]] = [nums[j + 1], nums[j]];
+      }
+      nums.length--;
       i--;
     }
   }

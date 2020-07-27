@@ -21,11 +21,11 @@ var isValid = function(s) {
     let left = config.find(c => c.left == temp[i]);
     let right = config.find(c => c.right == temp[i]);
     if (left) {
-      stack.push(temp[i]);
+      stack.push(left.right);
     }
     if (right) {
       if (stack.length == 0) return false;
-      if (stack[stack.length -1] != right.left) {
+      if (stack[stack.length -1] != right.right) {
         return false;
       } else {
         stack.pop();
